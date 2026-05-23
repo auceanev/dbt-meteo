@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+dbt_meteo/dev.duckdb
+dbt_meteo/meteo_source.db
+dbt_meteo/target/
+dbt_meteo/logs/
+dbt_meteo/.user.yml

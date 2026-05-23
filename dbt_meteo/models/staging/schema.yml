@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_meteo_paris
+    description: "Données météo horaires nettoyées — source Open Meteo"
+    columns:
+      - name: measured_at
+        description: "Horodatage de la mesure"
+        tests:
+          - not_null
+          - unique
+
+      - name: temperature_c
+        description: "Température en degrés Celsius"
+        tests:
+          - not_null
+
+      - name: precipitation_mm
+        description: "Précipitations en millimètres"
+        tests:
+          - not_null
+
+      - name: windspeed_kmh
+        description: "Vitesse du vent en km/h"
+        tests:
+          - not_null
+
+  - name: mart_meteo_daily
+    description: "Agrégats journaliers météo Paris"
+    columns:
+      - name: measured_date
+        description: "Date de la mesure"
+        tests:
+          - not_null
+          - unique
